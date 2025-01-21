@@ -1,0 +1,28 @@
+# Archivos binarios y ejecutables
+*.out
+*.exe
+*.dll
+
+# Archivos intermedios de compilación
+*.o
+*.obj
+*.so
+*.a
+*.lib
+
+# Carpetas comunes
+/build/
+/dist/
+/bin/
+/obj/
+
+# Archivos de depuración y configuración
+*.log
+*.tmp
+*.swp
+*.DS_Store
+
+# Otros temporales
+*~
+
+francinette
