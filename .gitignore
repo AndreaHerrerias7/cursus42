@@ -25,4 +25,6 @@
 # Otros temporales
 *~
 
+venv
 francinette
+.vscode
