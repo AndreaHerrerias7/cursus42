@@ -6,7 +6,7 @@
 /*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:00:31 by aherreri          #+#    #+#             */
-/*   Updated: 2025/01/21 15:17:55 by aherrerias       ###   ########.fr       */
+/*   Updated: 2025/01/21 15:38:20 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 int	ft_printf(char const *fmt, ...);
 int	ft_conversion(char const c, va_list argumentos);
-int	ft_puthex(unsigned int n, int flag);
+int	ft_puthex(unsigned long n, int flag);
 int	ft_putptr(unsigned long n, int flag);
-int	ft_writenumber(long n, long base, int flag);
+int	ft_writenumber(long long n, long base, int flag);
 int	ft_putstr(char *str);
 int	ft_putchr(int c);
 
