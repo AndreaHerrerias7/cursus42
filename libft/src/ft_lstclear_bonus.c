@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:45:09 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/19 19:56:59 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:26:37 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Delete and free the memory of a list node and its consecutives
 
 #include "libft.h"
 
@@ -25,7 +27,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (*lst)
 	{
-		temp = (*lst) -> next;
+		temp = (*lst)-> next;
 		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
@@ -49,4 +51,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
     //printf("Before: %s \n", (char *)lst->content);
     return 0;
 } */
-

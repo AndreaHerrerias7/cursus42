@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:47:17 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/18 14:57:52 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:19:54 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Get the number of elements in a list
 
 #include "libft.h"
 

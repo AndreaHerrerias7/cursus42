@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:09:44 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/18 11:17:50 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:18:46 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Output an integer to a file descriptor
 
 #include "libft.h"
 

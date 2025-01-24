@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:00:29 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/19 20:23:34 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:25:26 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	**ft_split(char const *s, char c)
 	printf("%s\n", str[11]);
 } */
 
-int main(void)
+/* int main(void)
 {
 	int		i;
 	int 	counter;
@@ -124,4 +124,4 @@ int main(void)
 	while (counter--)
 		printf("%s \n", res[i++]);
 	
-}
+} */

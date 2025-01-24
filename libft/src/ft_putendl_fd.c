@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 13:10:58 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/08 17:10:38 by aherreri         ###   ########.fr       */
+/*   Created: 2024/12/18 11:01:06 by aherreri          #+#    #+#             */
+/*   Updated: 2025/01/24 09:18:24 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Check if a character is alphanumeric
- 
+// Output a string followed by a newline to a file descriptor
+
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int	res;
-
-	res = 0;
-	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'))
-		res = 1;
-	return (res);
+	while (*s != '\0')
+	{
+		write(fd, s, 1);
+		s++;
+	}
+	write(fd, "\n", 1);
 }
 
-/* int main(void)
+/* int	main(void)
 {
-    int res = ft_isalnum('a');
-    printf("%i", res);
+	ft_putendl_fd("hola", 1);
 } */

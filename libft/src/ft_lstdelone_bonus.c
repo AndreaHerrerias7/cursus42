@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 19:54:05 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/19 20:20:41 by aherreri         ###   ########.fr       */
+/*   Created: 2024/12/18 15:18:14 by aherreri          #+#    #+#             */
+/*   Updated: 2025/01/24 09:22:19 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Delete a node from a list without deleting its content
+
 #include "libft.h"
 
-/* void	f(void *content)
+/* void	del(void *lst)
 {
-	content = "a";
+	free(lst);
 } */
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !f)
+	if (!lst || !del)
 		return ;
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	del(lst->content);
+	free(lst);
 }
 
 /* int main() {
@@ -41,8 +40,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
     node1->next = node2;
     printf("Before: %s -> %s\n", (char *)lst->content, 
 	(char *)lst->next->content);
-    ft_lstiter(lst, f);
-	printf("%s", (char *)lst -> content);
+    ft_lstdelone(lst, del);
+	//printf("%s", (char *)node2 -> content);
     //printf("Before: %s \n", (char *)lst->content);
     return 0;
 } */

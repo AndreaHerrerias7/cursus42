@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:57:08 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/18 11:00:24 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:18:01 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Output a string to a file descriptor
 
 #include "libft.h"
 

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 09:54:39 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/18 10:23:48 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:17:21 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Returns a string applying a function to each character of a string
 
 #include "libft.h"
 

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:16:46 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/18 09:52:04 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:16:41 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Convert an integer to a string
+
 #include "libft.h"
 
 static int	ft_length(long n)

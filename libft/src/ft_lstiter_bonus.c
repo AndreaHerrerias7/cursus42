@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 15:18:14 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/19 19:56:33 by aherreri         ###   ########.fr       */
+/*   Created: 2024/12/19 19:54:05 by aherreri          #+#    #+#             */
+/*   Updated: 2025/01/24 10:11:31 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Apply a function to each element of a list
+
 #include "libft.h"
 
-/* void	del(void *lst)
+void	f(void *content)
 {
-	free(lst);
-} */
+	content = "a";
+}
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst || !del)
+	if (!lst || !f)
 		return ;
-	del(lst->content);
-	free(lst);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 
 /* int main() {
@@ -38,8 +43,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
     node1->next = node2;
     printf("Before: %s -> %s\n", (char *)lst->content, 
 	(char *)lst->next->content);
-    ft_lstdelone(lst, del);
-	//printf("%s", (char *)node2 -> content);
+    ft_lstiter(lst, f);
+	printf("%s", (char *)lst -> content);
     //printf("Before: %s \n", (char *)lst->content);
     return 0;
 } */
