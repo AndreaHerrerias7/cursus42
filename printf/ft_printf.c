@@ -6,7 +6,7 @@
 /*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 17:25:30 by aherreri          #+#    #+#             */
-/*   Updated: 2025/01/21 15:37:00 by aherrerias       ###   ########.fr       */
+/*   Updated: 2025/01/21 15:18:08 by aherrerias       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_conversion(char const c, va_list arg)
 	else if (c == 's')
 		count = count + ft_putstr(va_arg(arg, char *));
 	else if (c == 'p')
-		count = count + ft_puthex(va_arg(arg, unsigned long), 1);
+		count = count + ft_putptr(va_arg(arg, unsigned long), 1);
 	else if (c == 'd' || c == 'i')
 		count = count + ft_writenumber(va_arg(arg, int), 10, 0);
 	else if (c == 'u')
