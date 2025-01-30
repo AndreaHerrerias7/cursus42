@@ -3,24 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
+/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:28:46 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/01/28 13:47:34 by aherrerias       ###   ########.fr       */
+/*   Updated: 2025/01/29 19:03:16 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int main(int argc, const char **argv)
 {
-    char *ptr_a;
-    int a;
+    int i;
+	int val;
+	char	**a;
 
-    if (argc != 2)
-        return (printf("BAD \n"));
-    ptr_a = argv[1];
-    printf("el valor: %s \n", ptr_a);
-    a = ft_atoi(ptr_a);
-    printf(" valor %i \n", a);
+    i = 0;
+	val = 0;
+	
+	while(val != argc - 1)
+	{
+		if (ft_strchr(argv[val + 1], ' '))
+		{
+			a = ft_split(argv[val + 1], ' ');
+			while (a[i] != (void *)0)
+			{
+				printf("Valor: %s \n", a[i]);
+				i++;
+			}
+		}
+		val++;
+	}
 }
