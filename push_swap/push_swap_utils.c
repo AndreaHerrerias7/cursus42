@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:40:13 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/01/29 18:54:59 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/02/20 22:29:08 by andre            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-static int	ft_counter(const char *s, char c)
+int	ft_counter(const char *s, char c)
 {
 	int	count;
 	int	i;
@@ -46,7 +46,7 @@ static int	ft_counter(const char *s, char c)
 	return (count);
 }
 
-static char	*ft_word(const char *s, int start, int end)
+char	*ft_word(const char *s, int start, int end)
 {
 	int		i;
 	char	*word;
@@ -61,7 +61,7 @@ static char	*ft_word(const char *s, int start, int end)
 	return (word);
 }
 
-static int	ft_free_split(char **str, int j)
+int	ft_free_split(char **str, int j)
 {
 	while (--j >= 0)
 		free(str[j]);
@@ -69,7 +69,7 @@ static int	ft_free_split(char **str, int j)
 	return (0);
 }
 
-static int	ft_fill_split(char **str, char const *s, char c)
+int	ft_fill_split(char **str, char const *s, char c)
 {
 	int	i;
 	int	j;

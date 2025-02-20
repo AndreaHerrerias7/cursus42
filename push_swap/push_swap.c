@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
+/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:28:46 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/12 13:27:46 by aherrerias       ###   ########.fr       */
+/*   Updated: 2025/02/20 22:28:05 by andre            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void fill_stack(int *stack_a, int argc, char **argv)
 int main(int argc, char **argv)
 {
 	int *stack_a;
-	int total_numbers = count_numbers(argc, argv);
+	size_t total_numbers = count_numbers(argc, argv);
 	int j;
 
 	stack_a = malloc(sizeof(int) * (total_numbers + 1));
@@ -78,5 +78,15 @@ int main(int argc, char **argv)
 		printf("%i ", stack_a[j]);
 		j++;
 	}
+	int	*stack_b;
+	stack_b = malloc(sizeof(int) * 5);
+	stack_b[0] = 1;
+	stack_b[1] = 2;
+	printf("a0: %i a1: %i\n", stack_a[0], stack_a[1]);
+	printf("b0: %i b1: %i\n", stack_b[0], stack_b[1]);
+	printf("--------\n");
+	swap(stack_a, stack_b, 1);
+	printf("a0: %i a1: %i\n", stack_a[0], stack_a[1]);
+	printf("b0: %i b1: %i\n", stack_b[0], stack_b[1]);
 	return (0);
 }
