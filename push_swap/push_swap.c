@@ -6,7 +6,7 @@
 /*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:28:46 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/20 22:28:05 by andre            ###   ########.fr       */
+/*   Updated: 2025/02/22 00:48:46 by andre            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int count_numbers(int argc, char **argv)
 	return count;
 }
 
-void fill_stack(int *stack_a, int argc, char **argv)
+void fill_stack(int *temp, int argc, char **argv)
 {
 	int val;
 	int j;
@@ -50,43 +50,67 @@ void fill_stack(int *stack_a, int argc, char **argv)
 			a_str = ft_split(argv[val], ' ');
 			while (a_str[i])
 			{
-				stack_a[j++] = ft_atoi(a_str[i]);
+				temp[j++] = ft_atoi(a_str[i]);
 				i++;
 			}
 		}
 		else
-			stack_a[j++] = ft_atoi(argv[val]);
+			temp[j++] = ft_atoi(argv[val]);
 		val++;
 	}
-	stack_a[j] = 0;
+	temp[j] = 0;
+}
+
+t_stack	*create_stack_a(int *temp, size_t total_numbers)
+{
+	size_t i;
+	t_stack *stack_a;
+	t_stack *new_node;
+
+	stack_a = NULL;
+	i = 0;
+	while(i < total_numbers)
+	{
+		new_node = ft_lstnew(temp[i]);
+		if (!new_node)
+			return (NULL);
+		
+		ft_lstadd_back(&stack_a, new_node);
+		i++;
+	}
+	return (stack_a);
 }
 
 int main(int argc, char **argv)
 {
-	int *stack_a;
+	int *temp;
 	size_t total_numbers = count_numbers(argc, argv);
 	int j;
+	t_stack	*stack_a;
 
-	stack_a = malloc(sizeof(int) * (total_numbers + 1));
-	if (!stack_a)
+	temp = malloc(sizeof(int) * (total_numbers + 1));
+	if (!temp)
 		return (0);
 
-	fill_stack(stack_a, argc, argv);
+	fill_stack(temp, argc, argv);
 	j = 0;
-	while (stack_a[j])
+	while (temp[j])
 	{
-		printf("%i ", stack_a[j]);
+		printf("%i ", temp[j]);
 		j++;
 	}
-	int	*stack_b;
-	stack_b = malloc(sizeof(int) * 5);
-	stack_b[0] = 1;
-	stack_b[1] = 2;
-	printf("a0: %i a1: %i\n", stack_a[0], stack_a[1]);
-	printf("b0: %i b1: %i\n", stack_b[0], stack_b[1]);
-	printf("--------\n");
-	swap(stack_a, stack_b, 1);
-	printf("a0: %i a1: %i\n", stack_a[0], stack_a[1]);
-	printf("b0: %i b1: %i\n", stack_b[0], stack_b[1]);
+	stack_a = create_stack_a(temp, total_numbers);
+	free(temp);
+	
+	printf("Before: %i -> %i\n", stack_a->value, stack_a->next->value);
+	
+	t_stack	*stack_b;
+	stack_b = NULL;
+	printf("joel\n");
+	push(stack_a, stack_b, 2);
+	push(stack_a, stack_b, 2);
+	swap(stack_a, stack_a, 1);
+	printf("AFTER: %i -> %i\n", stack_a->value, stack_a->next->value);
+	printf("AFTER: %i ", stack_b->value);
 	return (0);
 }

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherrerias <aherrerias@student.42.fr>      +#+  +:+       +#+        */
+/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:26:38 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/20 17:03:51 by aherrerias       ###   ########.fr       */
+/*   Updated: 2025/02/21 20:17:56 by andre            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*Add a new node in the list*/
-t_list	*ft_lstnew(int *value)
+t_stack	*ft_lstnew(int value)
 {
-	t_list	*lst;
+	t_stack	*lst;
 
-	lst = (t_list *)malloc(sizeof(t_list));
+	lst = (t_stack *)malloc(sizeof(t_stack));
 	if (lst == NULL)
 		return (NULL);
 	lst->value = value;
@@ -26,7 +26,7 @@ t_list	*ft_lstnew(int *value)
 }
 
 /*Return the last node of the list*/
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -38,9 +38,9 @@ t_list	*ft_lstlast(t_list *lst)
 }
 
 /*Add a node at end of the list*/
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*last;
+	t_stack	*last;
 
 	if (!lst || !new)
 		return ;
@@ -54,7 +54,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 }
 
 /*Iterate over each node of the list and apply the function f*/
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+/* void	ft_lstiter(t_stack *lst, void (*f)(void *))
 {
 	if (!lst || !f)
 		return ;
@@ -63,4 +63,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		f(lst->value);
 		lst = lst->next;
 	}
-}
+} */
