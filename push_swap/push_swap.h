@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:40:44 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/22 00:43:04 by andre            ###   ########.fr       */
+/*   Updated: 2025/02/26 17:52:07 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_strchr(const char *s, int c);
 void	swap(t_stack *stack_a, t_stack *stack_b, int mode);
 t_stack	*ft_lstnew(int value);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
-void	push(t_stack *stack_a, t_stack *stack_b, int mode);
+void	push(t_stack **stack_a, t_stack **stack_b, int mode);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:28:46 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/22 00:48:46 by andre            ###   ########.fr       */
+/*   Updated: 2025/02/26 18:18:23 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,23 +94,24 @@ int main(int argc, char **argv)
 
 	fill_stack(temp, argc, argv);
 	j = 0;
+	printf("Lista de numeros dada: ");
 	while (temp[j])
 	{
 		printf("%i ", temp[j]);
 		j++;
 	}
+	printf("\n");
 	stack_a = create_stack_a(temp, total_numbers);
 	free(temp);
 	
-	printf("Before: %i -> %i\n", stack_a->value, stack_a->next->value);
-	
 	t_stack	*stack_b;
 	stack_b = NULL;
-	printf("joel\n");
-	push(stack_a, stack_b, 2);
-	push(stack_a, stack_b, 2);
-	swap(stack_a, stack_a, 1);
-	printf("AFTER: %i -> %i\n", stack_a->value, stack_a->next->value);
-	printf("AFTER: %i ", stack_b->value);
+	//swap(stack_a, stack_a, 1);
+	//printf("Before: %i -> %i\n", stack_a->value, stack_a->next->value);
+	push(&stack_a, &stack_b, 2);
+	//printf("Valor stack a %i \n", stack_a->value);
+	// printf("Valor stack b %i \n", stack_a->value);
+	//printf("AFTER: %i -> %i\n", stack_a->value, stack_a->next->value);
+	//printf("AFTER: %i ", stack_b->value);
 	return (0);
 }

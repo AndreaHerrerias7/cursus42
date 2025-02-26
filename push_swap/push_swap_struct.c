@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:26:38 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/21 20:17:56 by andre            ###   ########.fr       */
+/*   Updated: 2025/02/26 17:40:56 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
+}
+
+void	ft_lstdelone(t_stack *lst)
+{
+	if (!lst)
+		return ;
+	free(lst);
 }
 
 /*Iterate over each node of the list and apply the function f*/
