@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:45:26 by aherreri          #+#    #+#             */
-/*   Updated: 2025/02/26 18:25:52 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:21:23 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ void add_data(t_stack **src_stack, t_stack **dest_stack)
 		return ;
 	temp = *src_stack;
 	*src_stack = (*src_stack)->next;
-	ft_lstadd_back(dest_stack, temp);
+	ft_lstadd_front(dest_stack, temp);
 }
 
 void push(t_stack **stack_a, t_stack **stack_b, int mode)
 {
-	if (mode == 1)
+	if (mode == 1) //pa (pone lo que hay en b en a)
 	{
 		if (*stack_b)
 		{
@@ -76,7 +76,7 @@ void push(t_stack **stack_a, t_stack **stack_b, int mode)
 	}
 	return ;
 }
-void rotate(t_stack **stack_a, t_stack **stack_b, int mode)
+/* void rotate(t_stack **stack_a, t_stack **stack_b, int mode)
 {
 	
-}
+} */

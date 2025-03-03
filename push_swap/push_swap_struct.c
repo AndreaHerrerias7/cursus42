@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:26:38 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/26 17:40:56 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:18:24 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
+}
+
+void	ft_lstadd_front(t_stack	**lst, t_stack	*new)
+{
+	new->next = *lst;
+	*lst = new;
 }
 
 void	ft_lstdelone(t_stack *lst)

@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:28:46 by aherrerias        #+#    #+#             */
-/*   Updated: 2025/02/26 18:18:23 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:15:33 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,12 @@ int main(int argc, char **argv)
 	stack_b = NULL;
 	//swap(stack_a, stack_a, 1);
 	//printf("Before: %i -> %i\n", stack_a->value, stack_a->next->value);
-	push(&stack_a, &stack_b, 2);
-	//printf("Valor stack a %i \n", stack_a->value);
+	printf("Valor stack a %i \n", stack_a->value);
+	push(&stack_a, &stack_b, 2); //pb
+	printf("cuando lo primero que pongo: %i \n", stack_b->value);
+	push(&stack_a, &stack_b, 1); //pa  
+	printf("Valor stack b %i \n", stack_b->value);
+	printf("Valor stack a %i \n", stack_a->value);
 	// printf("Valor stack b %i \n", stack_a->value);
 	//printf("AFTER: %i -> %i\n", stack_a->value, stack_a->next->value);
 	//printf("AFTER: %i ", stack_b->value);
