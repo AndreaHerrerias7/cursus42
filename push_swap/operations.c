@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andre <andre@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:45:26 by aherreri          #+#    #+#             */
-/*   Updated: 2025/03/03 19:21:23 by aherreri         ###   ########.fr       */
+/*   Updated: 2025/03/12 19:52:22 by andre            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,17 @@ void	swap(t_stack *stack_a, t_stack *stack_b, int mode)
 		printf("sb\n");
 	else
 		printf("ss\n");
-	if (mode == 1 || mode == 3)
+	if (mode == 1 || mode == 3 && stack_a && stack_a->next)
 	{
-		if (stack_a && stack_a->next)
-		{
-			ptr_temp = stack_a->value;
-			stack_a->value= stack_a->next->value;
-			stack_a->next->value = ptr_temp;
-		}
+		ptr_temp = stack_a->value;
+		stack_a->value= stack_a->next->value;
+		stack_a->next->value = ptr_temp;
 	}
-	if (mode == 2 || mode == 3)
+	if (mode == 2 || mode == 3 && stack_b && stack_b->next)
 	{
-		if (stack_b && stack_b->next)
-		{
-			ptr_temp = stack_b->value;
-			stack_b->value = stack_b->next->value;
-			stack_b->next->value = ptr_temp;
-		}
+		ptr_temp = stack_b->value;
+		stack_b->value = stack_b->next->value;
+		stack_b->next->value = ptr_temp;
 	}
 	return ;
 }
@@ -53,7 +47,8 @@ void add_data(t_stack **src_stack, t_stack **dest_stack)
 		return ;
 	temp = *src_stack;
 	*src_stack = (*src_stack)->next;
-	ft_lstadd_front(dest_stack, temp);
+	temp->next = *dest_stack;
+	*dest_stack = temp;
 }
 
 void push(t_stack **stack_a, t_stack **stack_b, int mode)
@@ -66,7 +61,7 @@ void push(t_stack **stack_a, t_stack **stack_b, int mode)
 			add_data(stack_b, stack_a);
 		}	
 	}
-	if (mode == 2)
+	else if (mode == 2)
 	{
 		if (*stack_a)
 		{
